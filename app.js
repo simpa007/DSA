@@ -399,6 +399,17 @@
 // 	console.log(map);
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
+
+//SOLUTION 1: Squares of a Sorted Array
+let sortedSquares = function (nums) {
+	Math.abs(nums);
+	const newArray = nums.map((num) => {
+		return num * num;
+	});
+	return newArray.sort((a, b) => a - b);
+};
+console.log(sortedSquares([-4, -1, 0, 3, 10]));
+
 //Profill Array
 
 // Array.prototype.myMap = function (callback) {
