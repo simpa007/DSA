@@ -347,7 +347,7 @@
 // }
 // console.log(maxNum(number));
 
-//QUESTION : TWO SUM
+//SOLUTION 1 : TWO SUM
 // var twoSum = function (nums, target) {
 // 	for (let i = 0; i < nums.length; i++) {
 // 		for (let j = i + 1; j < nums.length; j++) {
@@ -360,6 +360,45 @@
 
 // console.log(twoSum([2, 7, 11, 15], 9));
 
+//SOLUTION 2: TWO SUM
+// function twoSum(nums, target) {
+// 	const map = new Map();
+
+// 	for (let i = 0; i < nums.length; i++) {
+// 		const data = target - nums[i];
+
+// 		if (map.has(data)) {
+// 			return [map.get(data), i];
+// 		}
+// 		map.set(nums[i], i);
+// 	}
+// }
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+//SOLUTION 1: MAJORITY ELEMENT
+// function majorityElement(nums) {
+// 	nums.sort((a, b) => a - b);
+// 	return nums[Math.floor(nums.length / 2)];
+// }
+
+// console.log(majorityElement([2, 3, 2, 2, 1, 3]));
+
+//SOLUTION 2: MAJORITY ELEMENT
+// var majorityElement = function (nums) {
+// 	let map = {};
+// 	let n = nums.length;
+
+// 	for (let i of nums) {
+// 		if (!map[i]) {
+// 			map[i] = 1;
+// 		} else {
+// 			map[i]++;
+// 		}
+// 		if (map[i] >= n / 2) return i;
+// 	}
+// 	console.log(map);
+// };
+// console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 //Profill Array
 
 // Array.prototype.myMap = function (callback) {
