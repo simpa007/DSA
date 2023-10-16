@@ -400,18 +400,56 @@
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 
+//SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
+// did not understand
+
+// function removeDuplicate(nums) {
+// 	if (nums.length === 0) {
+// 		return 0;
+// 	}
+// 	let count = 0;
+// 	for (let i = 1; i < nums.length; i++) {
+// 		if (nums[i] !== nums[count]) {
+// 			nums[count] = nums[i];
+// 			count++;
+// 		}
+// 	}
+// 	return count + 1;
+// }
+
+// console.log(removeDuplicate([0, 2, 3, 1, 1, 4, 0]));
+
 //SOLUTION 1: Squares of a Sorted Array
-let sortedSquares = function (nums) {
-	Math.abs(nums);
-	const newArray = nums.map((num) => {
-		return num * num;
-	});
-	return newArray.sort((a, b) => a - b);
-};
-console.log(sortedSquares([-4, -1, 0, 3, 10]));
+// let sortedSquares = function (nums) {
+// 	Math.abs(nums);
+// 	const newArray = nums.map((num) => {
+// 		return num * num;
+// 	});
+// 	return newArray.sort((a, b) => a - b);
+// };
+// console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
-//Profill Array
+//SOLUTION 2: Squares of a Sorted Array
+// do not understand
 
+//SLOUTION 1: FIND PIVOT INDEX
+//will be back
+
+//SOLUTION 1: MOVE ZEROS
+
+//SECTION 2: MAP, FILTER AND REDUCE
+
+//MAP
+// const employees = [
+// 	{ name: "John", age: 32 },
+// 	{ name: "Sarah", age: 28 },
+// 	{ name: "Michael", age: 40 },
+// ];
+
+// const names = employees.map(({ name }) => name);
+// console.log(names);
+
+//Polyfill Array
 // Array.prototype.myMap = function (callback) {
 // 	let array = [];
 // 	for (let i = 0; i < this.length; i++) {
@@ -419,3 +457,67 @@ console.log(sortedSquares([-4, -1, 0, 3, 10]));
 // 	}
 // 	return array;
 // };
+
+//FILTER
+// const products = [
+// 	{ name: "iPhone", price: 999, inStock: true },
+// 	{ name: "Samsung Galaxy", price: 899, inStock: false },
+// 	{ name: "Google Pixel", price: 799, inStock: true },
+// ];
+
+// let inStock = products.filter((product) => product.inStock);
+
+// console.log(inStock);
+
+//Polyfill Filter
+
+// Array.prototype.myFilter = function (callback) {
+// 	let result = [];
+// 	for (let i = 0; i < this.length; i++) {
+// 		if (callback(this[i], i, this)) {
+// 			result.push(this[i]);
+// 		}
+// 	}
+// 	return result;
+// };
+
+//Reduce
+// const orders = [
+// 	{ product: "iPhone", price: 999, quantity: 2 },
+// 	{ product: "Samsung Galaxy", price: 899, quantity: 1 },
+// 	{ product: "Google Pixel", price: 799, quantity: 3 },
+// ];
+
+// const totalAmount = orders.reduce((acc, order) => {
+// 	return acc + order.price * order.quantity;
+// }, 0);
+// console.log(totalAmount);
+
+//Polyfill of reduce()
+// if (!Array.prototype.myFilter) {
+//     Array.prototype.myReduce = (callback, initialValue) => {
+//         let accumulator = initialValue === undefined ? this[0] : initialValue;
+//         for (let i = initialValue === undefined ? 1 : 0; i < this.length; i++) {
+//             accumulator = callback(accumulator, this[i], i, this);
+//         }
+//         return accumulator;
+//     };
+// }
+
+//SOLUTION 1: FIND THE LONGEST WORD LENGTH
+// const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
+
+// let wordCount = words.reduce(function (maxLength, word) {
+// 	const currentLength = word.length;
+// 	return currentLength > maxLength ? currentLength : maxLength;
+// }, 0);
+// console.log(wordCount);
+
+//SOLUTION 1: FIND THE LONGEST WORD
+const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
+
+const longestWord = words.reduce((longestWord, word) => {
+	return word.length > longestWord.length ? word : longestWord;
+}, "");
+
+console.log(longestWord);
