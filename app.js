@@ -407,21 +407,20 @@
 // 	if (nums.length === 0) {
 // 		return 0;
 // 	}
-// 	let count = 0;
-// 	for (let i = 1; i < nums.length; i++) {
-// 		if (nums[i] !== nums[count]) {
-// 			nums[count] = nums[i];
-// 			count++;
+// 	let index = 1;
+// 	for (let i = 0; i < nums.length - 1; i++) {
+// 		if (nums[i] !== nums[i + 1]) {
+// 			nums[index] = nums[i + 1];
+// 			index++;
 // 		}
 // 	}
-// 	return count + 1;
+// 	return index;
 // }
 
-// console.log(removeDuplicate([0, 2, 3, 1, 1, 4, 0]));
+// console.log(removeDuplicate([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
 
 //SOLUTION 1: Squares of a Sorted Array
 // let sortedSquares = function (nums) {
-// 	Math.abs(nums);
 // 	const newArray = nums.map((num) => {
 // 		return num * num;
 // 	});
@@ -430,7 +429,26 @@
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SOLUTION 2: Squares of a Sorted Array
-// do not understand
+// let sortedSquares = function (nums) {
+// 	let result = new Array(nums.length).fill(0);
+// 	let left = 0;
+// 	let right = nums.length - 1;
+// 	let index = nums.length - 1;
+// 	while (left < right) {
+// 		let leftVal = Math.pow(nums[left], 2);
+// 		let rightVal = Math.pow(nums[right], 2);
+// 		if (leftVal < rightVal) {
+// 			result[index] = rightVal;
+// 			right--;
+// 		} else {
+// 			result[index] = leftVal;
+// 			left++;
+// 		}
+// 		index--;
+// 	}
+// 	return result;
+// };
+// console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SLOUTION 1: FIND PIVOT INDEX
 //will be back
@@ -514,10 +532,61 @@
 // console.log(wordCount);
 
 //SOLUTION 1: FIND THE LONGEST WORD
-const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
+// const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
 
-const longestWord = words.reduce((longestWord, word) => {
-	return word.length > longestWord.length ? word : longestWord;
-}, "");
+// const longestWord = words.reduce((longestWord, word) => {
+// 	return word.length > longestWord.length ? word : longestWord;
+// }, "");
 
-console.log(longestWord);
+// console.log(longestWord);
+
+//Question 4: Calculate the average score of students who scored above 90
+// const students = [
+// 	{ name: "John", score: 85 },
+// 	{ name: "Sarah", score: 92 },
+// 	{ name: "Michael", score: 88 },
+// 	{ name: "Emma", score: 95 },
+// 	{ name: "Daniel", score: 90 },
+// ];
+
+// const studentScore = students
+// 	.filter((student) => student.score > 90)
+// 	.reduce((acc, current) => acc + current.score / 2, 0);
+// console.log(studentScore);
+
+//Question 5: Filter out books published before the year 2000 and return their titles
+// const books = [
+// 	{ title: "Book 1", year: 1998 },
+// 	{ title: "Book 2", year: 2003 },
+// 	{ title: "Book 3", year: 1995 },
+// 	{ title: "Book 4", year: 2001 },
+// ];
+// const bookFilter = books
+// 	.filter((book) => book.year > 2000)
+// 	.map((book) => book.title);
+// console.log(bookFilter);
+
+//Question 6: Capitalize the first letter of each word in the array
+// const strings = ["hello world", "i am openai", "welcome to javascript"];
+// function capitalizeWords(arr) {
+// 	return arr.map((word) => {
+// 		const firstLetter = word.charAt(0).toUpperCase();
+// 		const rest = word.slice(1).toLowerCase();
+// 		return firstLetter + rest;
+// 	});
+// }
+
+// console.log(capitalizeWords(strings));
+
+//Question 7: Calculate the factorial of the largest number in the array
+// const numbers = [5, 2, 8, 4, 3];
+
+// const largestFactorial = numbers.reduce((largest, num) => {
+// 	const currentFactorial = Array.from({ length: num })
+// 		.map((_, i) => i + 1)
+// 		.reduce((fact, val) => fact * val, 1);
+
+// 	return currentFactorial > largest ? currentFactorial : largest;
+// }, 1);
+
+// console.log(largestFactorial); // Output: 40320 (8!)
