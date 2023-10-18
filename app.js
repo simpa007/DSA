@@ -484,6 +484,19 @@
 //     return nums;
 // };
 
+//  SOLUTION 1: MAX CONSECUTIVE ONES
+
+// let findMaxConsecutiveOnes = function (nums) {
+// 	let current = 0;
+// 	let max = 0;
+// 	for (let i = 0; i < nums.length; i++) {
+// 		current = nums[i] === 0 ? 0 : current + 1;
+// 		max = current > max ? current : max;
+// 	}
+// 	return max;
+// };
+// findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]);
+
 //SECTION 2: MAP, FILTER AND REDUCE
 
 //MAP
