@@ -346,6 +346,10 @@
 // 	return max;
 // }
 // console.log(maxNum(number));
+//SOLUTION 2:
+// const maxNum = number.reduce((max, number) => {
+// 	return number > max ? number : max;
+// });
 
 //SOLUTION 1 : TWO SUM
 // var twoSum = function (nums, target) {
@@ -401,7 +405,6 @@
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 
 //SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
-// did not understand
 
 // function removeDuplicate(nums) {
 // 	if (nums.length === 0) {
@@ -418,6 +421,8 @@
 // }
 
 // console.log(removeDuplicate([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+//output = [0,1,2,3,4,-,-,-,-,-];
 
 //SOLUTION 1: Squares of a Sorted Array
 // let sortedSquares = function (nums) {
@@ -450,10 +455,34 @@
 // };
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
-//SLOUTION 1: FIND PIVOT INDEX
-//will be back
+//SOLUTION 1: FIND PIVOT INDEX
+//dont understand yet
+// var pivotIndex = function (nums) {
+// 	const sum = nums.reduce((total, item) => total + item, 0);
+// 	let left = 0;
+// 	for (let i = 0; i < nums.length; i++) {
+// 		const item = nums[i];
+// 		const right = sum - left - item;
+// 		if (left === right) return i;
+// 		left += item;
+// 	}
+// 	return -1;
+// };
+// console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
+// var moveZeroes = function(nums) {
+//     let size = nums.length;
+//      for (let i = 0; i < size; i++) {
+//          if (nums[i] === 0) {
+//              nums.splice(i, 1);
+//              nums.push(0);
+//              i--;
+//              size--;
+//          }
+//      }
+//     return nums;
+// };
 
 //SECTION 2: MAP, FILTER AND REDUCE
 
