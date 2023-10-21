@@ -421,21 +421,6 @@
 // }
 
 // console.log(removeDuplicate([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
-
-function removeDuplicates(nums) {
-	if (nums.length === 0) {
-		return 0;
-	}
-	let index = 1;
-	for (let i = 0; i < nums.length - 1; i++) {
-		if (nums[i] !== nums[i + 1]) {
-			nums[index] = nums[i + 1];
-			index++;
-		}
-	}
-	return index;
-}
-console.log(removeDuplicates([1, 1, 2]));
 //output = [0,1,2,3,4,-,-,-,-,-];
 
 //SOLUTION 1: Squares of a Sorted Array
@@ -470,7 +455,6 @@ console.log(removeDuplicates([1, 1, 2]));
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SOLUTION 1: FIND PIVOT INDEX
-//dont understand yet
 // var pivotIndex = function (nums) {
 // 	const sum = nums.reduce((total, item) => total + item, 0);
 // 	let left = 0;
@@ -646,3 +630,39 @@ console.log(removeDuplicates([1, 1, 2]));
 // }, 1);
 
 // console.log(largestFactorial); // Output: 40320 (8!)
+
+//SECTION 3:STRING
+
+//SOLUTION 1: REVERSE A STRING
+// var reverseString = function (s) {
+// 	return s.reverse();
+// };
+
+// console.log(reverseString(["h", "e", "l", "l", "o"]));
+
+//SOLUTION 1: REVERSE A STRING
+// var reverseString = function (s) {
+// 	let left = 0;
+// 	let right = s.length - 1;
+
+// 	while (left <= right) {
+// 		[s[left], s[right]] = [s[right], s[left]];
+// 		left++;
+// 		right--;
+// 	}
+// 	return s;
+// };
+
+// console.log(reverseString(["h", "e", "l", "l", "o"]));
+
+//SOLUTION 1: VALID ANAGRAM
+//An Anagram is a word or phrase formed by rearranging the letters of a different
+//word or phrase, typically using all the original letters exactly once.
+
+var isAnagram = function (s, t) {
+	s = s.split("").sort().join("");
+	t = t.split("").sort().join("");
+	return s === t;
+};
+
+console.log(isAnagram("anagram", "nagaram"));
