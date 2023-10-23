@@ -455,18 +455,18 @@
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SOLUTION 1: FIND PIVOT INDEX
-// var pivotIndex = function (nums) {
-// 	const sum = nums.reduce((total, item) => total + item, 0);
-// 	let left = 0;
-// 	for (let i = 0; i < nums.length; i++) {
-// 		const item = nums[i];
-// 		const right = sum - left - item;
-// 		if (left === right) return i;
-// 		left += item;
-// 	}
-// 	return -1;
-// };
-// console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+var pivotIndex = function (nums) {
+	const sum = nums.reduce((total, item) => total + item, 0);
+	let left = 0;
+	for (let i = 0; i < nums.length; i++) {
+		const item = nums[i];
+		const right = sum - left - item;
+		if (left === right) return i;
+		left += item;
+	}
+	return -1;
+};
+console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
 // var moveZeroes = function(nums) {
@@ -659,10 +659,87 @@
 //An Anagram is a word or phrase formed by rearranging the letters of a different
 //word or phrase, typically using all the original letters exactly once.
 
-var isAnagram = function (s, t) {
-	s = s.split("").sort().join("");
-	t = t.split("").sort().join("");
-	return s === t;
-};
+// var isAnagram = function (s, t) {
+// 	s = s.split("").sort().join("");
+// 	t = t.split("").sort().join("");
+// 	return s === t;
+// };
 
-console.log(isAnagram("anagram", "nagaram"));
+// console.log(isAnagram("anagram", "nagaram"));
+
+//SOLUTION 2: VALID ANAGRAM
+
+//SECTION4: RECURSION
+
+// function fun(n) {
+// 	if (n === 0) {
+// 		return;
+// 	}
+// 	console.log("fun", n);
+// 	return fun(n - 1);
+// }
+// console.log(fun(10));
+
+//SOLUTION 1: FACTORIAL OF A NUMBER
+//5! = 5*4*3*2*1 =120;
+
+// function factorial(n) {
+// 	let sum = 1;
+// 	for (let i = 2; i <= n; i++) {
+// 		sum = sum * i;
+// 	}
+// 	return sum;
+// }
+// console.log(factorial(5));
+
+//SOLUTION 2: FACTORIAL OF A NUMBER
+
+// function factorial(n) {
+// 	if (n === 0) {
+// 		return 1;
+// 	}
+// 	return n * factorial(n - 1);
+// }
+// console.log(factorial(5));
+
+//SOLUTION 1: Sum of Array
+// function sumOfArray(nums) {
+// 	let sum = 0;
+// 	for (let i = 0; i < nums.length; i++) {
+// 		sum += nums[i];
+// 	}
+// 	return sum;
+// }
+// console.log(sumOfArray([2, 3, 4, 5]));
+
+//SOLUTION 2: SUM OF ARRAY
+
+// function sumOfArray(arr) {
+// 	if (arr.length === 0) {
+// 		return 0;
+// 	}
+// 	return arr[arr.length - 1] + sumOfArray(arr.slice(0, arr.length - 1));
+// }
+// console.log(sumOfArray([2, 3, 4, 5]));
+
+//SOLUTION 3: SUM OF ARRAY
+
+// function sumOfArray(arr) {
+// 	if (arr.length === 0) {
+// 		return 0;
+// 	}
+// 	let lastElement = arr.pop();
+// 	return lastElement + sumOfArray(arr);
+// }
+// console.log(sumOfArray([2, 3, 4, 5]));
+
+//SOLUTION 1: FIBONACCI SEQUENCES
+//fib(7) : [0,1,1,2,3,5,8,13]
+
+// function fib(n) {
+// 	if (n < 2) {
+// 		return n;
+// 	}
+// 	return fib(n - 1) + fib(n - 2);
+// }
+// console.log(fib(7));
