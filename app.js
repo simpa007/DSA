@@ -455,18 +455,18 @@
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SOLUTION 1: FIND PIVOT INDEX
-var pivotIndex = function (nums) {
-	const sum = nums.reduce((total, item) => total + item, 0);
-	let left = 0;
-	for (let i = 0; i < nums.length; i++) {
-		const item = nums[i];
-		const right = sum - left - item;
-		if (left === right) return i;
-		left += item;
-	}
-	return -1;
-};
-console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+// var pivotIndex = function (nums) {
+// 	const sum = nums.reduce((total, item) => total + item, 0);
+// 	let left = 0;
+// 	for (let i = 0; i < nums.length; i++) {
+// 		const item = nums[i];
+// 		const right = sum - left - item;
+// 		if (left === right) return i;
+// 		left += item;
+// 	}
+// 	return -1;
+// };
+// console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
 // var moveZeroes = function(nums) {
@@ -481,6 +481,37 @@ console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 //      }
 //     return nums;
 // };
+
+//SOLUTION 2: MOVE ZEROS
+// var moveZeroes = (nums) => {
+// 	let [left, right] = [0, 0];
+
+// 	while (right < nums.length) {
+// 		const canSwap = nums[right] !== 0;
+// 		if (canSwap) {
+// 			[nums[left], nums[right]] = [nums[right], nums[left]];
+// 			left++;
+// 		}
+
+// 		right++;
+// 	}
+// };
+
+//SOLUTION 3: MOVE ZEROS
+// let moveZeros = function (nums) {
+// 	let zeroArray = [];
+// 	let numArray = [];
+// 	for (let i = 0; i < nums.length; i++) {
+// 		if (nums[i] === 0) {
+// 			zeroArray.push(nums[i]);
+// 		} else {
+// 			numArray.push(nums[i]);
+// 		}
+// 	}
+// 	return [...numArray, ...zeroArray];
+// };
+
+// console.log(moveZeros([0, 3, 0, 2, 0]));
 
 //  SOLUTION 1: MAX CONSECUTIVE ONES
 
