@@ -469,33 +469,36 @@
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
-// var moveZeroes = function(nums) {
-//     let size = nums.length;
-//      for (let i = 0; i < size; i++) {
-//          if (nums[i] === 0) {
-//              nums.splice(i, 1);
-//              nums.push(0);
-//              i--;
-//              size--;
-//          }
-//      }
-//     return nums;
-// };
-
+var moveZeroes = function (nums) {
+	let size = nums.length;
+	for (let i = 0; i < size; i++) {
+		if (nums[i] === 0) {
+			nums.splice(i, 1);
+			nums.push(0);
+			i--;
+			size--;
+		}
+	}
+	return nums;
+};
+console.log(moveZeroes([0, 3, 0, 2, 0]));
 //SOLUTION 2: MOVE ZEROS
-// var moveZeroes = (nums) => {
-// 	let [left, right] = [0, 0];
+var moveZeroes = (nums) => {
+	let [left, right] = [0, 0];
 
-// 	while (right < nums.length) {
-// 		const canSwap = nums[right] !== 0;
-// 		if (canSwap) {
-// 			[nums[left], nums[right]] = [nums[right], nums[left]];
-// 			left++;
-// 		}
+	while (right < nums.length) {
+		const canSwap = nums[right] !== 0;
+		if (canSwap) {
+			[nums[left], nums[right]] = [nums[right], nums[left]];
+			left++;
+		}
 
-// 		right++;
-// 	}
-// };
+		right++;
+	}
+	return nums;
+};
+
+// console.log(moveZeroes([0, 3, 0, 2, 0]));
 
 //SOLUTION 3: MOVE ZEROS
 // let moveZeros = function (nums) {
