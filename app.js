@@ -469,52 +469,48 @@
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
-var moveZeroes = function (nums) {
-	let size = nums.length;
-	for (let i = 0; i < size; i++) {
-		if (nums[i] === 0) {
-			nums.splice(i, 1);
-			nums.push(0);
-			i--;
-			size--;
-		}
-	}
-	return nums;
-};
-console.log(moveZeroes([0, 3, 0, 2, 0]));
-//SOLUTION 2: MOVE ZEROS
-var moveZeroes = (nums) => {
-	let [left, right] = [0, 0];
-
-	while (right < nums.length) {
-		const canSwap = nums[right] !== 0;
-		if (canSwap) {
-			[nums[left], nums[right]] = [nums[right], nums[left]];
-			left++;
-		}
-
-		right++;
-	}
-	return nums;
-};
-
-// console.log(moveZeroes([0, 3, 0, 2, 0]));
-
-//SOLUTION 3: MOVE ZEROS
-// let moveZeros = function (nums) {
-// 	let zeroArray = [];
-// 	let numArray = [];
-// 	for (let i = 0; i < nums.length; i++) {
+// var moveZeroes = function (nums) {
+// 	let size = nums.length;
+// 	for (let i = 0; i < size; i++) {
 // 		if (nums[i] === 0) {
-// 			zeroArray.push(nums[i]);
-// 		} else {
-// 			numArray.push(nums[i]);
+// 			nums.splice(i, 1);
+// 			nums.push(0);
+// 			i--;
+// 			size--;
 // 		}
 // 	}
-// 	return [...numArray, ...zeroArray];
+// 	return nums;
+// };
+// console.log(moveZeroes([0, 1, 0, 3, 12]));
+
+//SOLUTION 2: MOVE ZEROS
+// var moveZeroes = (nums) => {
+// 	const arr = new Array(nums.length).fill(0);
+// 	let [left, right] = [0, 0];
+// 	while (right < nums.length) {
+// 		const isZero = nums[right] === 0;
+// 		if (!isZero) {
+// 			arr[left] = nums[right];
+// 			left++;
+// 		}
+// 		right++;
+// 	}
+// 	return arr;
 // };
 
-// console.log(moveZeros([0, 3, 0, 2, 0]));
+// console.log(moveZeroes([0, 3, 0, 12, 0]));
+
+//SOLUTION 1: REMOVE ELEMENT
+// var removeElement = function (nums, val) {
+// 	for (let i = 0; i < nums.length; i++) {
+// 		if (nums[i] === val) {
+// 			nums.splice(i, 1);
+// 			i--;
+// 		}
+// 	}
+// 	return nums.length;
+// };
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
 //  SOLUTION 1: MAX CONSECUTIVE ONES
 
@@ -527,7 +523,7 @@ var moveZeroes = (nums) => {
 // 	}
 // 	return max;
 // };
-// findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]);
+// console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
 
 //SECTION 2: MAP, FILTER AND REDUCE
 
@@ -667,6 +663,44 @@ var moveZeroes = (nums) => {
 
 //SECTION 3:STRING
 
+// SOLUTION 1:  Find the Index of the First Occurrence in a String
+
+// var strStr = function (haystack, needle) {
+// 	let i = 0,
+// 		j = 0,
+// 		k = 0;
+
+// 	while (i < haystack.length) {
+// 		while (needle[j] === haystack[k]) {
+// 			k++;
+// 			j++;
+// 			if (j === needle.length) return i;
+// 			if (k === haystack.length) return -1;
+// 		}
+// 		if (needle[j] !== haystack[k]) {
+// 			i++;
+// 			k = i;
+// 			j = 0;
+// 		}
+// 	}
+// 	return -1;
+// };
+
+// console.log(strStr("sabutsad", "sad"));
+//SOLUTION 2: Find the Index of the First Occurrence in a String
+// var strStr = function (haystack, needle) {
+// 	for (let i = 0; i <= haystack.length - needle.length; i++) {
+// 		let str = "";
+// 		for (let j = i; j < i + needle.length; j++) {
+// 			str += haystack[j];
+// 		}
+// 		if (str == needle) {
+// 			return i;
+// 		}
+// 	}
+// 	return -1;
+// };
+
 //SOLUTION 1: REVERSE A STRING
 // var reverseString = function (s) {
 // 	return s.reverse();
@@ -702,6 +736,57 @@ var moveZeroes = (nums) => {
 // console.log(isAnagram("anagram", "nagaram"));
 
 //SOLUTION 2: VALID ANAGRAM
+// var isAnagram = function (s, t) {
+// 	if (s.length !== t.length) {
+// 		return false;
+// 	}
+// 	//keep track of how many times and Item occur in s;
+// 	let count = {};
+// 	for (let char of s) {
+// 		if (!count[char]) {
+// 			count[char] = 0;
+// 		}
+// 		count[char]++;
+// 	}
+// 	//check if t exist in count then reduce it
+// 	for (let char of t) {
+// 		if (count[char] === undefined) {
+// 			return false;
+// 		} else {
+// 			count[char]--;
+// 		}
+// 	}
+// 	// check the object and see if all the value is equal to zero
+// 	for (let char in count) {
+// 		if (count[char] !== 0) return false;
+// 	}
+// 	return true;
+// };
+
+// console.log(isAnagram("anagram", "nagaram"));
+
+//SOLUTION 1: LONGEST COMMON PREFIX
+// var longestCommonPrefix = function (strs) {
+// 	let prefix = strs[0];
+// 	for (let i = 1; i < strs.length; i++) {
+// 		while (strs[i].indexOf(prefix) !== 0) {
+// 			prefix = prefix.substring(0, prefix.length - 1);
+// 		}
+// 	}
+// 	return prefix;
+// };
+
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+
+//SOLUTION 1 : Merge Strings Alternately
+let array = ["a", "b", "c"];
+function replace(arr) {
+	for (let i = 0; i < arr.length; i + 2) {
+		arr.splice(i, 0, " ");
+	}
+	return arr;
+}
+console.log(replace(array));
 
 //SECTION4: RECURSION
 
