@@ -779,17 +779,37 @@
 // console.log(longestCommonPrefix(["flower", "flow", "flight"]));
 
 //SOLUTION 1 : Merge Strings Alternately
-let array = ["a", "b", "c"];
-function replace(arr) {
-	for (let i = 0; i < arr.length; i + 2) {
-		arr.splice(i, 0, " ");
-	}
-	return arr;
-}
-console.log(replace(array));
+
+// let mergeAlternately = function (word1, word2) {
+// 	let result = "";
+// 	let maxLength = Math.max(word1.length, word2.length);
+// 	for (let i = 0; i < maxLength; i++) {
+// 		if (i < word1.length) result += word1[i];
+// 		if (i < word2.length) result += word2[i];
+// 	}
+// 	return result;
+// };
+
+// console.log(mergeAlternately("abcd", "pq"));
+
+//SOLUTION 1: LENGTH OF LAST WORD
+// var lengthOfLastWord = function (s) {
+// 	let newStr = s.trim().split(" ");
+// 	return newStr[newStr.length - 1].length;
+// };
+
+// console.log(lengthOfLastWord("   fly me   to   the moon  "));
+
+//SOLUTION 2: LENGTH OF LAST WORD
+var lengthOfLastWord = function (s) {
+	let trimmedString = s.trim();
+
+	return trimmedString.length;
+};
+
+console.log(lengthOfLastWord("Hello World"));
 
 //SECTION4: RECURSION
-
 // function fun(n) {
 // 	if (n === 0) {
 // 		return;
