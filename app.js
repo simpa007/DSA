@@ -421,6 +421,7 @@
 // }
 
 // console.log(removeDuplicate([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
 //output = [0,1,2,3,4,-,-,-,-,-];
 
 //SOLUTION 1: Squares of a Sorted Array
@@ -456,13 +457,15 @@
 
 //SOLUTION 1: FIND PIVOT INDEX
 // var pivotIndex = function (nums) {
-// 	const sum = nums.reduce((total, item) => total + item, 0);
+// 	const sum = nums.reduce((acc, current) => (acc += current), 0);
 // 	let left = 0;
 // 	for (let i = 0; i < nums.length; i++) {
-// 		const item = nums[i];
-// 		const right = sum - left - item;
+// 		let item = nums[i];
+// 		let right = sum - item - left;
 // 		if (left === right) return i;
-// 		left += item;
+// 		else {
+// 			left += item;
+// 		}
 // 	}
 // 	return -1;
 // };
@@ -686,7 +689,7 @@
 // 	return -1;
 // };
 
-// console.log(strStr("sabutsad", "sad"));
+// console.log(strStr("sadbutsad", "sad"));
 //SOLUTION 2: Find the Index of the First Occurrence in a String
 // var strStr = function (haystack, needle) {
 // 	for (let i = 0; i <= haystack.length - needle.length; i++) {
@@ -801,15 +804,98 @@
 // console.log(lengthOfLastWord("   fly me   to   the moon  "));
 
 //SOLUTION 2: LENGTH OF LAST WORD
-var lengthOfLastWord = function (s) {
-	let trimmedString = s.trim();
+// var lengthOfLastWord = function (s) {
+// 	let trimmedString = s.trim();
 
-	return trimmedString.length;
+// 	return trimmedString.length - trimmedString.lastIndexOf(" ") - 1;
+// };
+
+// console.log(lengthOfLastWord("Hello World"));
+
+//SOLUTION 1 :  Valid Palindrome
+// var isPalindrome = function (s) {
+// 	let strLower = s.toLowerCase().replace(/[^A-Z0-9]/gi, "");
+
+// 	let left = 0;
+// 	let right = strLower.length - 1;
+// 	while (left < right) {
+// 		if (strLower[left] !== strLower[right]) {
+// 			return false;
+// 		}
+// 		left++;
+// 		right--;
+// 	}
+// 	return true;
+// };
+// console.log(isPalindrome("race a car"));
+
+//SOULTION 1: STRING COMPRESSION
+
+// let compress = function (chars) {
+// 	let i = 0,
+// 		len = 0;
+
+// 	while (i < chars.length) {
+// 		let currChar = chars[i];
+// 		chars[len++] = currChar;
+
+// 		let count = 0;
+// 		while (i < chars.length && currChar == chars[i]) {
+// 			count++;
+// 			i++;
+// 		}
+// 		if (count > 1) {
+// 			count = count.toString().split("");
+// 			for (let c of count) {
+// 				chars[len++] = c;
+// 			}
+// 		}
+// 	}
+// 	return len;
+// };
+// console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
+
+//SOLUTION 2 : NOT CORRECT
+
+// var compress = function (chars) {
+// 	let obj = {};
+// 	for (let s of chars) {
+// 		if (!obj[s]) {
+// 			obj[s] = 1;
+// 		} else {
+// 			obj[s]++;
+// 		}
+// 	}
+// 	let value = Object.entries(obj).flat();
+// 	let array = [];
+// 	for (let i = 0; i < value.length; i++) {
+// 		array.push(value[i].toString());
+// 	}
+// 	return array;
+// };
+// console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
+
+//SOLUTION 1 : REVERSE WORDS IN A STRING : NOT WORKING
+// var reverseWords = function (s) {
+// 	return s.split(" ").reverse().join(" ").trim();
+// };
+// console.log(reverseWords("the sky is blue"));
+
+//SOLUTION 2: REVERSE WORDS IN A STRING
+let reverseWords = function (s) {
+	let newStr = s.split(" ");
+	let left = 0;
+	let right = newStr.length - 1;
+	while (left < right) {
+		[newStr[left], newStr[right]] = [newStr[right], newStr[left]];
+		left++;
+		right--;
+	}
+	return newStr.join(" ");
 };
-
-console.log(lengthOfLastWord("Hello World"));
-
+console.log(reverseWords("the sky is blue"));
 //SECTION4: RECURSION
+
 // function fun(n) {
 // 	if (n === 0) {
 // 		return;
