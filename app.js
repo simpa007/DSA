@@ -877,23 +877,48 @@
 
 //SOLUTION 1 : REVERSE WORDS IN A STRING : NOT WORKING
 // var reverseWords = function (s) {
-// 	return s.split(" ").reverse().join(" ").trim();
+// 	return s.trim().split(/\s+/).reverse().join(" ");
 // };
-// console.log(reverseWords("the sky is blue"));
+// console.log(reverseWords(" the  sky is blue"));
 
 //SOLUTION 2: REVERSE WORDS IN A STRING
-let reverseWords = function (s) {
-	let newStr = s.split(" ");
-	let left = 0;
-	let right = newStr.length - 1;
-	while (left < right) {
-		[newStr[left], newStr[right]] = [newStr[right], newStr[left]];
-		left++;
-		right--;
-	}
-	return newStr.join(" ");
-};
-console.log(reverseWords("the sky is blue"));
+// let reverseWords = function (s) {
+// 	let arr = s.split(" ");
+// 	let reverse = "";
+// 	for (let i = arr.length - 1; i >= 0; i--) {
+// 		if (arr[i] == "") continue;
+// 		if (reverse.length > 0) reverse += " ";
+// 		reverse += arr[i];
+// 	}
+// 	return reverse;
+// };
+// console.log(reverseWords(" the sky is  blue "));
+
+//SOLUTION 1: REVERSE VOWELS OF A STRING
+// let reverseVowels = function (s) {
+// 	let vowels = "aeiouAEIOU";
+// 	let left = 0;
+// 	let right = s.length - 1;
+// 	let arr = s.split("");
+// 	while (left < right) {
+// 		while (left < right && !vowels.includes(arr[left])) {
+// 			left++;
+// 		}
+// 		while (left < right && !vowels.includes(arr[right])) {
+// 			right--;
+// 		}
+// 		[arr[left], arr[right]] = [arr[right], arr[left]];
+// 		left++;
+// 		right--;
+// 	}
+// 	return arr.join("");
+// };
+
+// console.log(reverseVowels("hello"));
+// console.log(reverseVowels("leetcode"));
+
+//SOLUTION 1 : ROTATE STRING
+
 //SECTION4: RECURSION
 
 // function fun(n) {
