@@ -669,20 +669,19 @@
 // SOLUTION 1:  Find the Index of the First Occurrence in a String
 
 // var strStr = function (haystack, needle) {
-// 	let i = 0,
-// 		j = 0,
-// 		k = 0;
-
-// 	while (i < haystack.length) {
+// 	let index = 0, //position
+// 		j = 0, //needle
+// 		k = 0; //haystack;
+// 	while (index < haystack.length) {
 // 		while (needle[j] === haystack[k]) {
-// 			k++;
 // 			j++;
-// 			if (j === needle.length) return i;
+// 			k++;
+// 			if (j === needle.length) return index;
 // 			if (k === haystack.length) return -1;
 // 		}
 // 		if (needle[j] !== haystack[k]) {
-// 			i++;
-// 			k = i;
+// 			index++;
+// 			k = index;
 // 			j = 0;
 // 		}
 // 	}
@@ -703,6 +702,7 @@
 // 	}
 // 	return -1;
 // };
+// console.log(strStr("sadbutsad", "sad"));
 
 //SOLUTION 1: REVERSE A STRING
 // var reverseString = function (s) {
@@ -740,30 +740,30 @@
 
 //SOLUTION 2: VALID ANAGRAM
 // var isAnagram = function (s, t) {
-// 	if (s.length !== t.length) {
+// 	if (s.length === t.lenth) {
 // 		return false;
 // 	}
-// 	//keep track of how many times and Item occur in s;
-// 	let count = {};
+// 	let obj = {};
 // 	for (let char of s) {
-// 		if (!count[char]) {
-// 			count[char] = 0;
-// 		}
-// 		count[char]++;
-// 	}
-// 	//check if t exist in count then reduce it
-// 	for (let char of t) {
-// 		if (count[char] === undefined) {
-// 			return false;
+// 		if (!obj[char]) {
+// 			obj[char] = 1;
 // 		} else {
-// 			count[char]--;
+// 			obj[char]++;
 // 		}
 // 	}
-// 	// check the object and see if all the value is equal to zero
-// 	for (let char in count) {
-// 		if (count[char] !== 0) return false;
+// 	for (let char of t) {
+// 		if (obj[char]) {
+// 			obj[char]--;
+// 		} else {
+// 			return false;
+// 		}
 // 	}
-// 	return true;
+// 	for (let char in obj) {
+// 		if (obj[char] === 0) return true;
+// 		else {
+// 			return false;
+// 		}
+// 	}
 // };
 
 // console.log(isAnagram("anagram", "nagaram"));
@@ -893,6 +893,8 @@
 // 	return reverse;
 // };
 // console.log(reverseWords(" the sky is  blue "));
+
+//continue from here
 
 //SOLUTION 1: REVERSE VOWELS OF A STRING
 // let reverseVowels = function (s) {
