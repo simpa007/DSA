@@ -995,3 +995,40 @@
 // 	return fib(n - 1) + fib(n - 2);
 // }
 // console.log(fib(7));
+
+//SECTION 5 : SEARCHING IN JAVASCRIPT
+
+//Linear Search in Javascript
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// let linearSearch = function (arr, target) {
+// 	for (let i = 0; i < arr.length; i++) {    // O(N)
+// 		if (arr[i] === target) {
+// 			return i;
+// 		}
+// 	}
+// 	return -1;
+// };
+// console.log(linearSearch(arr, 20));
+
+//Binary Search in Javascript;
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// let binarySearch = function (arr, target) {
+// 	let start = 0;
+// 	let end = arr.length - 1;
+// 	while (start <= end) {
+// 		let mid = Math.floor((start + end) / 2);
+// 		if (arr[mid] === target) {
+// 			return mid;
+// 		} else if (arr[mid] > target) {
+// 			end = mid - 1;
+// 		} else {
+// 			start = mid + 1;
+// 		}
+// 	}
+// 	return -1;
+// };
+// console.log(binarySearch(array, 3));
+
+//SECTION 6 : OBJECT (HASH MAP)
