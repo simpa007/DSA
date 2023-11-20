@@ -1031,4 +1031,35 @@
 // };
 // console.log(binarySearch(array, 3));
 
+// Binary Search using Recursion
+
+// const BinarySearchRecur = (arr, target) => {
+//     return BinarySearchUtil(arr, target, 0, arr.length);
+// }
+
+// const BinarySearchUtil = (arr, target, start, end) => {
+//     if (start > end)
+//         return -1;
+
+//     let mid = Math.floor((start + end) / 2);
+
+//     if (arr[mid] === target) {
+//         return mid;
+//     }
+
+//     else if (arr[mid] > target) {
+//         return BinarySearchUtil(arr, target, start, mid - 1);
+//     }
+
+//     else {
+//         return BinarySearchUtil(arr, target, mid + 1, end);
+//     }
+// }
+
+//SDLUTION 1: Sqrt(x)
+let sqrt = function (x) {
+	return Math.floor(Math.sqrt(x));
+};
+console.log(sqrt(8));
+
 //SECTION 6 : OBJECT (HASH MAP)
