@@ -1057,9 +1057,42 @@
 // }
 
 //SDLUTION 1: Sqrt(x)
-let sqrt = function (x) {
-	return Math.floor(Math.sqrt(x));
+// let sqrt = function (x) {
+// 	return Math.floor(Math.sqrt(x));
+// };
+// console.log(sqrt(8));
+
+//SOLUTION 2: Sqrt(x);
+// let sqrt = function (x) {
+// 	if (x < 2) {
+// 		return x;
+// 	}
+// 	for (let i = 2; i <= x; i++) {
+// 		if (i * i === x) return i;
+// 		if (i * i > x) return i - 1;
+// 	}
+// };
+// console.log(sqrt(25));
+
+//SOLUTION 1: FIRST BAD VERSION
+var solution = function (isBadVersion) {
+	/**
+	 * @param {integer} n Total versions
+	 * @return {integer} The first bad version
+	 */
+	return function (n) {
+		let start = 1,
+			end = n;
+		while (start <= end) {
+			let mid = Math.floor((start + end) / 2);
+			if (!isBadVersion(mid)) {
+				start = mid + 1;
+			} else {
+				end = mid - 1;
+			}
+		}
+		return start;
+	};
 };
-console.log(sqrt(8));
 
 //SECTION 6 : OBJECT (HASH MAP)
