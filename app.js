@@ -1075,24 +1075,42 @@
 // console.log(sqrt(25));
 
 //SOLUTION 1: FIRST BAD VERSION
-var solution = function (isBadVersion) {
-	/**
-	 * @param {integer} n Total versions
-	 * @return {integer} The first bad version
-	 */
-	return function (n) {
-		let start = 1,
-			end = n;
-		while (start <= end) {
-			let mid = Math.floor((start + end) / 2);
-			if (!isBadVersion(mid)) {
-				start = mid + 1;
-			} else {
-				end = mid - 1;
-			}
-		}
-		return start;
-	};
-};
+// var solution = function (isBadVersion) {
+// 	/**
+// 	 * @param {integer} n Total versions
+// 	 * @return {integer} The first bad version
+// 	 */
+// 	return function (n) {
+// 		let start = 1,
+// 			end = n;
+// 		while (start <= end) {
+// 			let mid = Math.floor((start + end) / 2);
+// 			if (!isBadVersion(mid)) {
+// 				start = mid + 1;
+// 			} else {
+// 				end = mid - 1;
+// 			}
+// 		}
+// 		return start;
+// 	};
+// };
+// console.log(solution(isBadVersion)(5));
 
+//SOLUTION 1: SEARCH INSERT POSITION
+// const arr = [1, 3, 5, 6];
+// const searchInsert = function (nums, target) {
+// 	let left = 0,
+// 		right = nums.length - 1;
+// 	while (left <= right) {
+// 		let mid = Math.floor((left + right) / 2);
+// 		if (nums[mid] === target) return mid;
+// 		if (nums[mid] > target) {
+// 			right = mid - 1;
+// 		} else {
+// 			left = mid + 1;
+// 		}
+// 	}
+// 	return left;
+// };
+// console.log(searchInsert(arr, 2));
 //SECTION 6 : OBJECT (HASH MAP)
