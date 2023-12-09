@@ -1081,7 +1081,7 @@
 // 	 * @return {integer} The first bad version
 // 	 */
 // 	return function (n) {
-// 		let start = 1,
+// 		let start = 0,
 // 			end = n;
 // 		while (start <= end) {
 // 			let mid = Math.floor((start + end) / 2);
@@ -1113,4 +1113,90 @@
 // 	return left;
 // };
 // console.log(searchInsert(arr, 2));
+
+//FIND MINIMUM IN ROTATED SORTED ARRAY
+let nums = [3, 4, 5, 1, 2];
+let nums2 = [4, 5, 6, 7, 0, 1, 2];
+let findMin = function (nums) {
+	let [left, right] = [0, nums.length - 1];
+	while (left < right) {
+		const mid = Math.floor((left + right) / 2);
+		const [leftNum, rightNum] = [nums[left], nums[right]];
+		if (leftNum < rightNum) {
+			return nums[left];
+		}
+		if (leftNum <= nums[mid]) {
+			left = mid + 1;
+		}
+		if (nums[mid] < leftNum) {
+			right = mid;
+		}
+	}
+	return nums[left];
+};
+console.log(findMin(nums));
+
 //SECTION 6 : OBJECT (HASH MAP)
+
+//FIND COUNT OF ALL PLAYERS
+//Coming back
+// const data = {
+// 	id: 1,
+// 	name: ["P1", "P4"],
+// 	next: {
+// 		id: 2,
+// 		name: ["P3"],
+// 		next: {
+// 			id: 3,
+// 			name: ["P3", "P4", "P5"],
+// 			next: {
+// 				id: 4,
+// 				name: ["P1", "P2", "P4"],
+// 				next: {
+// 					id: 5,
+// 					name: ["P2", "P3", "P5"],
+// 					next: null,
+// 				},
+// 			},
+// 		},
+// 	},
+// };
+// const playerCount = (data) => {
+// 	if (data === null) {
+// 		return {};
+// 	}
+
+// 	let countPlayer = {};
+// 	for (let player of data.name) {
+// 		countPlayer[player] = (countPlayer[player] || 0) + 1;
+// 	}
+// 	const nextPlayerCount = playerCount(data.next);
+
+// 	for (let key in nextPlayerCount) {
+// 		countPlayer[key] = (countPlayer[key] || 0) + nextPlayerCount[key];
+// 	}
+// 	return countPlayer;
+// };
+
+// console.log(playerCount(data));
+
+//SOLUTION 1: GROUP ANAGRAMS
+// const strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// const groupAnagram = (strs) => {
+// 	let anagrams = {};
+// 	for (let i = 0; i < strs.length; i++) {
+// 		const str = strs[i].split("").sort().join("");
+// 		if (!anagrams.hasOwnProperty(str)) {
+// 			anagrams[str] = [];
+// 		}
+// 		anagrams[str] = [...anagrams[str], strs[i]];
+// 		//console.log(anagrams);
+// 	}
+// 	let result = [];
+// 	for (let key in anagrams) {
+// 		result.push(anagrams[key]);
+// 	}
+// 	return result;
+// };
+// console.log(groupAnagram(strs));
