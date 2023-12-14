@@ -1193,19 +1193,40 @@
 // 	return nums[nums.length - 1];
 // };
 //console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
-//This is the problem with brute force techniques
 //console.log(singleNonDuplicate([3, 3, 3, 7, 7, 10, 11, 11]));
 
 //SOLUTION 3:
 //BINARY SEARCH
-const singleNonDuplicate = function (nums) {
-	let left = 0,
-		right = nums.length - 1;
-	while (left < right) {
-		let mid = Math.floor((right + left) / 2);
-	}
-};
-singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]);
+// const singleNonDuplicate = function (nums) {
+// 	let left = 0,
+// 		right = nums.length - 1;
+// 	while (left < right) {
+// 		let mid = Math.floor((right + left) / 2);
+// 		if (nums[mid] === nums[mid + 1]) mid = mid - 1;
+// 		if ((mid - left + 1) % 2 != 0) right = mid;
+// 		else left = mid + 1;
+// 	}
+// 	return nums[left];
+// };
+// console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+// console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
+
+//SOLUTION 4:
+// var singleNonDuplicate = function (nums) {
+// 	let left = 0,
+// 		right = nums.length - 2;
+
+// 	while (left <= right) {
+// 		const mid1 = (left + right) >> 1;
+// 		const mid2 = mid1 ^ 1;
+
+// 		if (nums[mid1] === nums[mid2]) left = mid1 + 1;
+// 		else right = mid1 - 1;
+// 	}
+
+// 	return nums[left];
+// };
+// console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
 //SECTION 6 : OBJECT (HASH MAP)
 
 //FIND COUNT OF ALL PLAYERS
