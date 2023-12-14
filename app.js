@@ -1115,27 +1115,97 @@
 // console.log(searchInsert(arr, 2));
 
 //FIND MINIMUM IN ROTATED SORTED ARRAY
-let nums = [3, 4, 5, 1, 2];
-let nums2 = [4, 5, 6, 7, 0, 1, 2];
-let findMin = function (nums) {
-	let [left, right] = [0, nums.length - 1];
-	while (left < right) {
-		const mid = Math.floor((left + right) / 2);
-		const [leftNum, rightNum] = [nums[left], nums[right]];
-		if (leftNum < rightNum) {
-			return nums[left];
-		}
-		if (leftNum <= nums[mid]) {
-			left = mid + 1;
-		}
-		if (nums[mid] < leftNum) {
-			right = mid;
-		}
-	}
-	return nums[left];
-};
-console.log(findMin(nums));
+// let num1 = [3, 4, 5, 1, 2];
+// let num2 = [4, 5, 6, 7, 0, 1, 2];
+// let findMin = function (nums) {
+// 	let [left, right] = [0, nums.length - 1];
+// 	while (left < right) {
+// 		const mid = Math.floor((left + right) / 2);
+// 		const [leftNum, rightNum] = [nums[left], nums[right]];
+// 		if (leftNum < rightNum) {
+// 			return leftNum;
+// 		}
+// 		if (leftNum <= nums[mid]) {
+// 			left = mid + 1;
+// 		}
+// 		if (nums[mid] < leftNum) {
+// 			right = mid;
+// 		}
+// 	}
+// 	return nums[left];
+// };
+// console.log(findMin(num2));
 
+//FIND FIRST AND LAST POSITION OF ELEMENT IN SORTED ARRAY
+// let searchRange = function (nums, target) {
+// 	const result = [];
+// 	result.push(binarySearch(true, nums, target));
+// 	result.push(binarySearch(false, nums, target));
+// 	return result;
+// };
+
+// const binarySearch = (isLeftBias, nums, target) => {
+// 	let left = 0;
+// 	let right = nums.length - 1;
+// 	let index = -1;
+
+// 	while (left <= right) {
+// 		const mid = Math.floor((left + right) / 2);
+// 		if (target > nums[mid]) {
+// 			left = mid + 1;
+// 		}
+// 		if (target < nums[mid]) {
+// 			right = mid - 1;
+// 		}
+// 		const isTarget = target === nums[mid];
+// 		if (isTarget) {
+// 			if (isLeftBias) {
+// 				index = mid;
+// 				right = mid - 1;
+// 			} else {
+// 				index = mid;
+// 				left = mid + 1;
+// 			}
+// 		}
+// 	}
+// 	return index;
+// };
+
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 8));
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 6));
+
+//SINGLE ELEMENT IN A SORTED ARRAY
+
+//SOLUTION 1
+// var singleNonDuplicate = function (nums) {
+// 	return nums.reduce((a, b) => a ^ b);
+// };
+// console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+
+//SOLUTION 2
+//BRUCE FORCE TECHNIQUE
+// let singleNonDuplicate = (nums) => {
+// 	for (let i = 0; i < nums.length - 1; i += 2) {
+// 		if (nums[i] != nums[i + 1]) {
+// 			return nums[i];
+// 		}
+// 	}
+// 	return nums[nums.length - 1];
+// };
+//console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+//This is the problem with brute force techniques
+//console.log(singleNonDuplicate([3, 3, 3, 7, 7, 10, 11, 11]));
+
+//SOLUTION 3:
+//BINARY SEARCH
+const singleNonDuplicate = function (nums) {
+	let left = 0,
+		right = nums.length - 1;
+	while (left < right) {
+		let mid = Math.floor((right + left) / 2);
+	}
+};
+singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]);
 //SECTION 6 : OBJECT (HASH MAP)
 
 //FIND COUNT OF ALL PLAYERS
@@ -1199,4 +1269,4 @@ console.log(findMin(nums));
 // 	}
 // 	return result;
 // };
-// console.log(groupAnagram(strs));
+// console.log(groupAnagram(strs));l
