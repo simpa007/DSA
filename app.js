@@ -1034,27 +1034,23 @@
 // Binary Search using Recursion
 
 // const BinarySearchRecur = (arr, target) => {
-//     return BinarySearchUtil(arr, target, 0, arr.length);
-// }
-
+// 	return BinarySearchUtil(arr, target, 0, arr.length);
+// };
 // const BinarySearchUtil = (arr, target, start, end) => {
-//     if (start > end)
-//         return -1;
-
-//     let mid = Math.floor((start + end) / 2);
-
-//     if (arr[mid] === target) {
-//         return mid;
-//     }
-
-//     else if (arr[mid] > target) {
-//         return BinarySearchUtil(arr, target, start, mid - 1);
-//     }
-
-//     else {
-//         return BinarySearchUtil(arr, target, mid + 1, end);
-//     }
-// }
+// 	if (start > end) {
+// 		return -1;
+// 	}
+// 	let mid = Math.floor((start + end) / 2);
+// 	if (arr[mid] === target) {
+// 		return mid;
+// 	} else if (arr[mid] > target) {
+// 		return BinarySearchUtil(arr, target, start, mid - 1);
+// 	} else {
+// 		return BinarySearchUtil(arr, target, mid + 1, end);
+// 	}
+// };
+// let value = BinarySearchRecur([1, 4, 6, 9, 12, 15], 6);
+// console.log(value);
 
 //SDLUTION 1: Sqrt(x)
 // let sqrt = function (x) {
@@ -1192,7 +1188,7 @@
 // 	}
 // 	return nums[nums.length - 1];
 // };
-//console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+// console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
 //console.log(singleNonDuplicate([3, 3, 3, 7, 7, 10, 11, 11]));
 
 //SOLUTION 3:
@@ -1227,6 +1223,7 @@
 // 	return nums[left];
 // };
 // console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
+
 //SECTION 6 : OBJECT (HASH MAP)
 
 //FIND COUNT OF ALL PLAYERS
