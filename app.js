@@ -1225,37 +1225,138 @@
 // console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
 
 //SEARCH A 2D MATRIX
-var searchMatrix = function (matrix, target) {
-	const [rows, cols] = [matrix.length, matrix[0].length];
-	let [left, right] = [0, rows * cols - 1];
+// var searchMatrix = function (matrix, target) {
+// 	const [rows, cols] = [matrix.length, matrix[0].length];
+// 	let [left, right] = [0, rows * cols - 1];
 
-	while (left <= right) {
-		const mid = (left + right) >> 1;
-		const [row, col] = [Math.floor(mid / cols), mid % cols];
-		const guess = matrix[row][col];
+// 	while (left <= right) {
+// 		const mid = (left + right) >> 1;
+// 		const [row, col] = [Math.floor(mid / cols), mid % cols];
+// 		const guess = matrix[row][col];
 
-		const isTarget = guess === target;
-		if (isTarget) return true;
+// 		const isTarget = guess === target;
+// 		if (isTarget) return true;
 
-		const isTargetGreater = guess < target;
-		if (isTargetGreater) left = mid + 1;
+// 		const isTargetGreater = guess < target;
+// 		if (isTargetGreater) left = mid + 1;
 
-		const isTargetLess = target < guess;
-		if (isTargetLess) right = mid - 1;
-	}
+// 		const isTargetLess = target < guess;
+// 		if (isTargetLess) right = mid - 1;
+// 	}
 
-	return false;
-};
-console.log(
-	searchMatrix(
-		[
-			[1, 3, 5, 7],
-			[10, 11, 16, 20],
-			[23, 30, 34, 60],
-		],
-		3
-	)
-);
+// 	return false;
+// };
+// console.log(
+// 	searchMatrix(
+// 		[
+// 			[1, 3, 5, 7],
+// 			[10, 11, 16, 20],
+// 			[23, 30, 34, 60],
+// 		],
+// 		3
+// 	)
+// );
+
+//FIND PEAK ELEMENT
+//SOLUTION 1 (LINEAR SEARCH)
+// let nums = [1, 2, 1, 3, 5, 6, 4];
+// let findPeakElement = function (nums) {
+// 	let isPrevSmaller = true;
+// 	for (let i = 0; i < nums.length - 1; i++) {
+// 		if (nums[i] > nums[i + 1]) {
+// 			return i;
+// 		}
+// 		isPrevSmaller = nums[i] < nums[i + 1];
+// 	}
+// 	return nums.length - 1;
+// };
+// console.log(findPeakElement(nums));
+//SOLUTION 2 (BINARY SEARCH)
+// let nums = [1, 2, 3, 1];
+// let findPeakElement2 = function (nums) {
+// 	let low = 0;
+// 	let upper = nums.length - 1;
+// 	while (low < upper) {
+// 		let mid = Math.floor((low + upper) / 2);
+// 		if (nums[mid] < nums[mid + 1]) {
+// 			low = mid + 1;
+// 		} else {
+// 			upper = mid;
+// 		}
+// 	}
+// 	return low;
+// };
+// console.log(findPeakElement2(nums));
+
+//SEARCH IN ROTATED SORTED ARRAY
+//SOLUTION 1
+// var search = function (nums, target) {
+// 	let start = 0,
+// 		end = nums.length - 1;
+// 	let mid = Math.floor((start + end) / 2);
+// 	while (start <= end) {
+// 		mid = Math.floor((start + end) / 2);
+// 		if (target === nums[mid]) {
+// 			return mid;
+// 		}
+// 		if (nums[start] <= nums[mid]) {
+// 			if (nums[start] <= target && nums[mid] >= target) {
+// 				end = mid - 1;
+// 			} else {
+// 				start = mid + 1;
+// 			}
+// 		} else {
+// 			if (nums[end] >= target && nums[mid] <= target) {
+// 				start = mid + 1;
+// 			} else {
+// 				end = mid - 1;
+// 			}
+// 		}
+// 	}
+// 	return -1;
+// };
+// console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+
+//SOLUTION 2
+// var search = (nums, target) => {
+//     let [left, right] = [0, nums.length - 1];
+
+//     while (left <= right) {
+//         const mid = (left + right) >> 1;
+//         const guess = nums[mid];
+//         const [leftNum, rightNum] = [nums[left], nums[right]];
+
+//         const isTarget = guess === target;
+//         if (isTarget) return mid;
+
+//         const isAscending = leftNum <= guess;
+//         if (isAscending) {
+//             const isInRange = leftNum <= target;
+//             const isLess = target < guess;
+
+//             const isTargetGreater = !(isInRange && isLess);
+//             if (isTargetGreater) left = mid + 1;
+
+//             const isTargetLess = isInRange && isLess;
+//             if (isTargetLess) right = mid - 1;
+//         }
+
+//         const isDescending = guess < leftNum;
+//         if (isDescending) {
+//             const isGreater = guess < target;
+//             const isInRange = target <= rightNum;
+
+//             const isTargetGreater = isGreater && isInRange;
+//             if (isTargetGreater) left = mid + 1;
+
+//             const isTargetLess = !(isGreater && isInRange);
+//             if (isTargetLess) right = mid - 1;
+//         }
+//     }
+
+//     return -1;
+// };
+//console.log(search([4, 5, 6, 7, 0, 1, 2], 3));
 
 //SECTION 6 : OBJECT (HASH MAP)
 
