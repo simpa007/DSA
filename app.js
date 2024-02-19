@@ -1,5 +1,7 @@
 //DATA STRUCTURE AND ALGORITHM
 
+//START
+
 //Question 1;
 // sum of all natural number n
 
@@ -37,10 +39,10 @@
 
 //Question 3: count the number of digits of a number
 //34252 : 5
-
+//
 // function countDigits(num) {
-// 	let str = String(num);
-// 	return str.length;
+// 	let number = String(num);
+// 	return number.length;
 // }
 
 // console.log(countDigits(1234567));
@@ -70,9 +72,11 @@
 // 	}
 // 	return false;
 // }
-
 // console.log(isPalindrome(121));
+
 //Solution 2:
+//121 true;
+//123 false;
 // function isPalindrome(x) {
 // 	let copyNum = x;
 // 	let reverseNum = 0;
@@ -116,21 +120,21 @@
 
 // console.log(fibonacci(7));
 
-// Question 6: Missing Number in an Array
-// Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+//Question 6: Missing Number in an Array
+//Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
-// let missingNumber = function (nums) {
-// 	//sum up the array nums
-// 	let sumOfArray = nums.reduce((a, b) => a + b);
-// 	//find the length of nums and sum them up
-// 	let sum = 0;
-// 	for (let i = 1; i <= nums.length; i++) {
-// 		sum += i;
-// 	}
-// 	//subtract it to find the missing number
-// 	return sum - sumOfArray;
-// };
-// console.log(missingNumber([0, 1, 3]));
+let missingNumber = function (nums) {
+	//sum up the array nums
+	let sumOfArray = nums.reduce((a, b) => a + b);
+	//find the length of nums and sum them up
+	let sum = 0;
+	for (let i = 1; i <= nums.length; i++) {
+		sum += i;
+	}
+	//subtract it to find the missing number
+	return sum - sumOfArray;
+};
+console.log(missingNumber([0, 1, 3]));
 
 // One Line Solution:
 //let missingNumber = (nums) => nums.length*(nums.length+1)/2 - nums.reduce((acc, num) => num + acc);
@@ -196,6 +200,8 @@
 // 	return arr;
 // };
 // console.log(fizzBuzz(25));
+
+//STOP
 
 //POWER OF TWO
 // var isPowerOfTwo = function (n) {
