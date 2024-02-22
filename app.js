@@ -123,32 +123,33 @@
 //Question 6: Missing Number in an Array
 //Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
-let missingNumber = function (nums) {
-	//sum up the array nums
-	let sumOfArray = nums.reduce((a, b) => a + b);
-	//find the length of nums and sum them up
-	let sum = 0;
-	for (let i = 1; i <= nums.length; i++) {
-		sum += i;
-	}
-	//subtract it to find the missing number
-	return sum - sumOfArray;
-};
-console.log(missingNumber([0, 1, 3]));
+// let missingNumber = function (nums) {
+// 	//sum up the array nums
+// 	let sumOfArray = nums.reduce((a, b) => a + b);
+// 	//find the length of nums and sum them up
+// 	let sum = 0;
+// 	for (let i = 1; i <= nums.length; i++) {
+// 		sum += i;
+// 	}
+// 	//subtract it to find the missing number
+// 	return sum - sumOfArray;
+// };
+// console.log(missingNumber([0, 1, 3]));
 
 // One Line Solution:
-//let missingNumber = (nums) => nums.length*(nums.length+1)/2 - nums.reduce((acc, num) => num + acc);
+// let missingNumber = (nums) =>
+// 	(nums.length * (nums.length + 1)) / 2 - nums.reduce((acc, num) => num + acc);
 
 //Question 7: Count Odd Numbers in an Interval Range
 //Solution 1: best solution
-//var countOdds = function (low, high) {
-//     if (low % 2 == 0 && high % 2 == 0) {
-//         return Math.floor((high - low) / 2)
-//     }
-//     else {
-//         return Math.ceil((high - low+1) / 2);
-//     }
+// var countOdds = function (low, high) {
+// 	if (low % 2 == 0 && high % 2 == 0) {
+// 		return Math.floor((high - low) / 2);
+// 	} else {
+// 		return Math.ceil((high - low + 1) / 2);
+// 	}
 // };
+//console.log(countOdds(8, 10));
 
 //Solution 2: best solution
 // var countOdds = function(l, h) {
@@ -170,19 +171,21 @@ console.log(missingNumber([0, 1, 3]));
 // 412. Fizz Buzz
 //SOLUTION 1:
 // const fizzBuzz = (n) => {
-//     let res = []
+// 	let res = [];
 
-//     for (let i = 1; i <= n; i++){
-//         let string = ''
-//         if (i % 3 === 0) string += 'Fizz'
-//         if (i % 5 === 0) string += 'Buzz'
+// 	for (let i = 1; i <= n; i++) {
+// 		let string = "";
+// 		if (i % 3 === 0) string += "Fizz";
+// 		if (i % 5 === 0) string += "Buzz";
 
-//         if (string === '') string += i
-//         res.push(string)
-//     }
+// 		if (string === "") string += i;
+// 		res.push(string);
+// 	}
 
-//     return res
+// 	return res;
 // };
+// console.log(fizzBuzz(100));
+
 //SOLUTION 2:
 // var fizzBuzz = function (n) {
 // 	let arr = [];
@@ -201,8 +204,6 @@ console.log(missingNumber([0, 1, 3]));
 // };
 // console.log(fizzBuzz(25));
 
-//STOP
-
 //POWER OF TWO
 // var isPowerOfTwo = function (n) {
 // 	if (n == 0) return 0;
@@ -215,23 +216,27 @@ console.log(missingNumber([0, 1, 3]));
 // console.log(isPowerOfTwo(2));
 
 //Question: Find the square root of a Number
-// var mySqrt = function(x) {
-//     let left = 0;
-//     let right = x;
-//     while(left <= right) {
-//         const mid = Math.floor((left+right)/2);
-//         if(mid*mid <= x && (mid+1) * (mid+1) > x) {
-//             return mid;
-//         }
-//         else if(mid*mid < x) {
-//             left = mid + 1;
-//         }
-//         else {
-//             right = mid - 1;
-//         }
-//     }
-// };
+var mySqrt = function (x) {
+	let left = 0;
+	let right = x;
+	while (left <= right) {
+		const mid = Math.floor((left + right) / 2);
+		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
+			return mid;
+		} else if (mid * mid < x) {
+			left = mid + 1;
+		} else {
+			right = mid - 1;
+		}
+	}
+};
+console.log(mySqrt(25));
 
+//SOLUTION 2:
+// let squareRoot = function (x) {
+// 	return Math.sqrt(x);
+// };
+// console.log(squareRoot(25));
 //SECTION 2: ARRAY
 //Question 1: check if an element exist in an array
 //Solution 1:
@@ -356,6 +361,8 @@ console.log(missingNumber([0, 1, 3]));
 // const maxNum = number.reduce((max, number) => {
 // 	return number > max ? number : max;
 // });
+
+// STOP
 
 //SOLUTION 1 : TWO SUM
 // var twoSum = function (nums, target) {
