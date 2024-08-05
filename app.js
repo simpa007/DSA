@@ -48,6 +48,17 @@
 // console.log(countDigits(1234567));
 
 //Solution 2:
+// function countNumber(num) {
+// 	let count = 0;
+// 	while (num > 0) {
+// 		num = Math.floor(num / 10);
+// 		count++;
+// 	}
+// 	return count;
+// }
+// console.log(countNumber(123456778799444));
+
+//Solution 3:
 // function countDigits2(num) {
 // 	num = Math.abs(num);
 // 	let count = 0;
@@ -57,8 +68,9 @@
 // 	} while (num > 0);
 // 	return count;
 // }
-
 // console.log(countDigits2(-1234567));
+
+//<<<<<<<<<<<<<<<<<<<<Conitunation>>>>>>>>>>>>>>>>>>>
 
 //Question 4: Check if a number is palindrome
 //Solution 1:
@@ -216,27 +228,28 @@
 // console.log(isPowerOfTwo(2));
 
 //Question: Find the square root of a Number
-var mySqrt = function (x) {
-	let left = 0;
-	let right = x;
-	while (left <= right) {
-		const mid = Math.floor((left + right) / 2);
-		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
-			return mid;
-		} else if (mid * mid < x) {
-			left = mid + 1;
-		} else {
-			right = mid - 1;
-		}
-	}
-};
-console.log(mySqrt(25));
+// var mySqrt = function (x) {
+// 	let left = 0;
+// 	let right = x;
+// 	while (left <= right) {
+// 		const mid = Math.floor((left + right) / 2);
+// 		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
+// 			return mid;
+// 		} else if (mid * mid < x) {
+// 			left = mid + 1;
+// 		} else {
+// 			right = mid - 1;
+// 		}
+// 	}
+// };
+// console.log(mySqrt(25));
 
 //SOLUTION 2:
 // let squareRoot = function (x) {
 // 	return Math.sqrt(x);
 // };
 // console.log(squareRoot(25));
+
 //SECTION 2: ARRAY
 //Question 1: check if an element exist in an array
 //Solution 1:
@@ -362,8 +375,6 @@ console.log(mySqrt(25));
 // 	return number > max ? number : max;
 // });
 
-// STOP
-
 //SOLUTION 1 : TWO SUM
 // var twoSum = function (nums, target) {
 // 	for (let i = 0; i < nums.length; i++) {
@@ -416,6 +427,8 @@ console.log(mySqrt(25));
 // 	console.log(map);
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
+
+//STOP
 
 //SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
 
