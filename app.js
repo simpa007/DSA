@@ -70,8 +70,6 @@
 // }
 // console.log(countDigits2(-1234567));
 
-//<<<<<<<<<<<<<<<<<<<<Conitunation>>>>>>>>>>>>>>>>>>>
-
 //Question 4: Check if a number is palindrome
 //Solution 1:
 // function isPalindrome(num) {
@@ -101,7 +99,7 @@
 // 	return x === reverseNum;
 // }
 
-// console.log(isPalindrome(1234));
+// console.log(isPalindrome(121));
 
 //Question 5: fibonacci sequences
 //solution 1
@@ -149,8 +147,10 @@
 // console.log(missingNumber([0, 1, 3]));
 
 // One Line Solution:
-// let missingNumber = (nums) =>
-// 	(nums.length * (nums.length + 1)) / 2 - nums.reduce((acc, num) => num + acc);
+let missingNumber = (nums) =>
+	(nums.length * (nums.length + 1)) / 2 - nums.reduce((acc, num) => num + acc);
+
+//<<<<<<<<<<<<<<<<<<<<Conitunation>>>>>>>>>>>>>>>>>>>
 
 //Question 7: Count Odd Numbers in an Interval Range
 //Solution 1: best solution
