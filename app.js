@@ -147,10 +147,8 @@
 // console.log(missingNumber([0, 1, 3]));
 
 // One Line Solution:
-let missingNumber = (nums) =>
-	(nums.length * (nums.length + 1)) / 2 - nums.reduce((acc, num) => num + acc);
-
-//<<<<<<<<<<<<<<<<<<<<Conitunation>>>>>>>>>>>>>>>>>>>
+// let missingNumber = (nums) =>
+// 	(nums.length * (nums.length + 1)) / 2 - nums.reduce((acc, num) => num + acc);
 
 //Question 7: Count Odd Numbers in an Interval Range
 //Solution 1: best solution
@@ -161,13 +159,14 @@ let missingNumber = (nums) =>
 // 		return Math.ceil((high - low + 1) / 2);
 // 	}
 // };
-//console.log(countOdds(8, 10));
+// console.log(countOdds(8, 10));
+// console.log(countOdds(3, 10));
 
 //Solution 2: best solution
-// var countOdds = function(l, h) {
+// var countOdds = function (l, h) {
 // 	return Math.floor((h + 1) / 2) - Math.floor(l / 2);
-// 	};
-
+// };
+//  console.log(countOdds(8, 10));
 //solution 3:
 // let countOdds = function (low, high) {
 // 	let arr = [];
@@ -217,6 +216,7 @@ let missingNumber = (nums) =>
 // console.log(fizzBuzz(25));
 
 //POWER OF TWO
+//>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // var isPowerOfTwo = function (n) {
 // 	if (n == 0) return 0;
 // 	while (n != 1) {
@@ -227,22 +227,24 @@ let missingNumber = (nums) =>
 // };
 // console.log(isPowerOfTwo(2));
 
+//>>>>>>>>>START<<<<<<<<<
+
 //Question: Find the square root of a Number
-// var mySqrt = function (x) {
-// 	let left = 0;
-// 	let right = x;
-// 	while (left <= right) {
-// 		const mid = Math.floor((left + right) / 2);
-// 		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
-// 			return mid;
-// 		} else if (mid * mid < x) {
-// 			left = mid + 1;
-// 		} else {
-// 			right = mid - 1;
-// 		}
-// 	}
-// };
-// console.log(mySqrt(25));
+var mySqrt = function (x) {
+	let left = 0;
+	let right = x;
+	while (left <= right) {
+		const mid = Math.floor((left + right) / 2);
+		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
+			return mid;
+		} else if (mid * mid < x) {
+			left = mid + 1;
+		} else {
+			right = mid - 1;
+		}
+	}
+};
+console.log(mySqrt(36));
 
 //SOLUTION 2:
 // let squareRoot = function (x) {
@@ -326,6 +328,8 @@ let missingNumber = (nums) =>
 //let array4 = array.concat();
 // array4.pop();
 // console.log(array4, array);
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //Question 5: how to merge two array
 // let array1 = ["Apple", "Banana", "Orange"];
