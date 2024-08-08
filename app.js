@@ -227,24 +227,23 @@
 // };
 // console.log(isPowerOfTwo(2));
 
-//>>>>>>>>>START<<<<<<<<<
-
 //Question: Find the square root of a Number
-var mySqrt = function (x) {
-	let left = 0;
-	let right = x;
-	while (left <= right) {
-		const mid = Math.floor((left + right) / 2);
-		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
-			return mid;
-		} else if (mid * mid < x) {
-			left = mid + 1;
-		} else {
-			right = mid - 1;
-		}
-	}
-};
-console.log(mySqrt(36));
+//>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// var mySqrt = function (x) {
+// 	let left = 0;
+// 	let right = x;
+// 	while (left <= right) {
+// 		const mid = Math.floor((left + right) / 2);
+// 		if (mid * mid <= x && (mid + 1) * (mid + 1) > x) {
+// 			return mid;
+// 		} else if (mid * mid < x) {
+// 			left = mid + 1;
+// 		} else {
+// 			right = mid - 1;
+// 		}
+// 	}
+// };
+// console.log(mySqrt(36));
 
 //SOLUTION 2:
 // let squareRoot = function (x) {
@@ -264,14 +263,14 @@ console.log(mySqrt(36));
 // 	return false;
 // };
 
-// console.log(findElement([1, 2, 3, 6, 7, 8, 0], 9));
+// console.log(findElement([1, 2, 3, 6, 7, 8, 0], 0));
 
 //Solution 2:
 // const array = [3, "hello"];
 // const findElement2 = function (arr, target) {
 // 	return arr.includes(target);
 // };
-// console.log(findElement2(array, 5));
+// console.log(findElement2(array, 3));
 
 //Question 2: check if an element exist in an array and return it index
 //Solution 1:
@@ -324,12 +323,12 @@ console.log(mySqrt(36));
 //Deep copy
 // let array = ["apple", "john", true, 2, 5, 45];
 // let array2 = [...array];
-//let array3 = Array.from(array);
-//let array4 = array.concat();
+// let array3 = Array.from(array);
+// let array4 = array.concat();
 // array4.pop();
 // console.log(array4, array);
 
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //Question 5: how to merge two array
 // let array1 = ["Apple", "Banana", "Orange"];
@@ -432,7 +431,7 @@ console.log(mySqrt(36));
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 
-//STOP
+//>>>>>>>>>>>>>>>>>>>>>STop<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
 
