@@ -339,8 +339,6 @@
 
 //Question 6: How to check if two array are equal
 
-// let arr1 = [1, 3, 4];
-// let arr2 = [1, 3, 4];
 //SOLUTION 1:
 // let isEqual = function (arr1, arr2) {
 // 	if (arr1.length !== arr2.length) {
@@ -361,8 +359,7 @@
 // console.log(isEqual(arr1, arr2));
 
 // Question: Getting the Max Number
-// let number = [1, 4, 5, 10, 7];
-
+// let number = [1, 4, 15, 10, 7];
 // function maxNum(arr) {
 // 	max = 0;
 // 	for (let i = 0; i < arr.length; i++) {
@@ -374,9 +371,8 @@
 // }
 // console.log(maxNum(number));
 //SOLUTION 2:
-// const maxNum = number.reduce((max, number) => {
-// 	return number > max ? number : max;
-// });
+// const maxNum = number.reduce((max, number) => (number > max ? number : max));
+// console.log(maxNum);
 
 //SOLUTION 1 : TWO SUM
 // var twoSum = function (nums, target) {
@@ -389,7 +385,8 @@
 // 	}
 // };
 
-// console.log(twoSum([2, 7, 11, 15], 9));
+//console.log(twoSum([2, 4, 11, 10], 15));
+//>>>>>>>>>>>>>>>>>>>>>Revision <<<<<<<<<<<<<<<<<<
 
 //SOLUTION 2: TWO SUM
 // function twoSum(nums, target) {
@@ -404,7 +401,7 @@
 // 		map.set(nums[i], i);
 // 	}
 // }
-// console.log(twoSum([2, 7, 11, 15], 9));
+//console.log(twoSum([2, 7, 11, 15], 9));
 
 //SOLUTION 1: MAJORITY ELEMENT
 // function majorityElement(nums) {
@@ -412,9 +409,8 @@
 // 	return nums[Math.floor(nums.length / 2)];
 // }
 
-// console.log(majorityElement([2, 3, 2, 2, 1, 3]));
-
 //SOLUTION 2: MAJORITY ELEMENT
+//>>>>>>>>>>>>>>>>>>>>>Revision <<<<<<<<<<<<<<<<<<
 // var majorityElement = function (nums) {
 // 	let map = {};
 // 	let n = nums.length;
@@ -431,7 +427,7 @@
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 
-//>>>>>>>>>>>>>>>>>>>>>STop<<<<<<<<<<<<<<<<<<<
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
 
@@ -531,6 +527,8 @@
 // };
 
 // console.log(moveZeroes([0, 3, 0, 12, 0]));
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: REMOVE ELEMENT
 // var removeElement = function (nums, val) {
