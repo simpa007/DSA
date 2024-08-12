@@ -427,10 +427,8 @@
 // };
 // console.log(majorityElement([2, 3, 2, 2, 1, 3]));
 
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
-
 //SOLUTION 1: REMOVE DUPLICATES FROM SORTED ARRAY
-
+//>>>>>>>>>>>>>>>>>>>>>Revision<<<<<<<<<<<<<<<<<<<
 // function removeDuplicate(nums) {
 // 	if (nums.length === 0) {
 // 		return 0;
@@ -451,9 +449,7 @@
 
 //SOLUTION 1: Squares of a Sorted Array
 // let sortedSquares = function (nums) {
-// 	const newArray = nums.map((num) => {
-// 		return num * num;
-// 	});
+// 	const newArray = nums.map((num) => num * num);
 // 	return newArray.sort((a, b) => a - b);
 // };
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
@@ -478,9 +474,31 @@
 // 	}
 // 	return result;
 // };
+
+// function sortedSquares(nums) {
+// 	let result = new Array(nums.length).fill(0);
+// 	let left = 0;
+// 	let right = nums.length - 1;
+// 	let index = nums.length - 1;
+// 	while (left < right) {
+// 		let leftVal = Math.pow(nums[left], 2);
+// 		let rightVal = Math.pow(nums[right], 2);
+// 		if (leftVal < rightVal) {
+// 			result[index] = rightVal;
+// 			right--;
+// 		} else {
+// 			result[index] = leftVal;
+// 			left++;
+// 		}
+// 		index--;
+// 	}
+// 	return result;
+// }
+
 // console.log(sortedSquares([-4, -1, 0, 3, 10]));
 
 //SOLUTION 1: FIND PIVOT INDEX
+//>>>>>>>>>>>>>>>>>>>>>Revision<<<<<<<<<<<<<<<<<<<
 // var pivotIndex = function (nums) {
 // 	const sum = nums.reduce((acc, current) => (acc += current), 0);
 // 	let left = 0;
@@ -497,6 +515,7 @@
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
+//>>>>>>>>>>>>>>>>>>>>>Revision<<<<<<<<<<<<<<<<<<<
 // var moveZeroes = function (nums) {
 // 	let size = nums.length;
 // 	for (let i = 0; i < size; i++) {
@@ -509,7 +528,8 @@
 // 	}
 // 	return nums;
 // };
-// console.log(moveZeroes([0, 1, 0, 3, 12]));
+
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 2: MOVE ZEROS
 // var moveZeroes = (nums) => {
@@ -527,8 +547,6 @@
 // };
 
 // console.log(moveZeroes([0, 3, 0, 12, 0]));
-
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: REMOVE ELEMENT
 // var removeElement = function (nums, val) {
@@ -554,6 +572,8 @@
 // 	return max;
 // };
 // console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SECTION 2: MAP, FILTER AND REDUCE
 
