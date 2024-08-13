@@ -328,8 +328,6 @@
 // array4.pop();
 // console.log(array4, array);
 
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
-
 //Question 5: how to merge two array
 // let array1 = ["Apple", "Banana", "Orange"];
 // let array2 = [19, 2, 4, 5];
@@ -515,7 +513,7 @@
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
 //SOLUTION 1: MOVE ZEROS
-//>>>>>>>>>>>>>>>>>>>>>Revision<<<<<<<<<<<<<<<<<<<
+
 // var moveZeroes = function (nums) {
 // 	let size = nums.length;
 // 	for (let i = 0; i < size; i++) {
@@ -528,10 +526,11 @@
 // 	}
 // 	return nums;
 // };
-
+// console.log(moveZeroes([0, 3, 0, 12, 0]));
 //>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 2: MOVE ZEROS
+//>>>>>>>>>>>>>>>>>>>>>revisit<<<<<<<<<<<<<<<<<<<
 // var moveZeroes = (nums) => {
 // 	const arr = new Array(nums.length).fill(0);
 // 	let [left, right] = [0, 0];
@@ -558,7 +557,7 @@
 // 	}
 // 	return nums.length;
 // };
-// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+//console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
 //  SOLUTION 1: MAX CONSECUTIVE ONES
 
@@ -573,7 +572,7 @@
 // };
 // console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
 
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SECTION 2: MAP, FILTER AND REDUCE
 
@@ -642,8 +641,10 @@
 //     };
 // }
 
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
+
 //SOLUTION 1: FIND THE LONGEST WORD LENGTH
-// const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
+//const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
 
 // let wordCount = words.reduce(function (maxLength, word) {
 // 	const currentLength = word.length;
