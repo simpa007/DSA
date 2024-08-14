@@ -557,6 +557,7 @@
 // 	}
 // 	return nums.length;
 // };
+
 //console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
 //  SOLUTION 1: MAX CONSECUTIVE ONES
@@ -572,8 +573,6 @@
 // };
 // console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
 
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
-
 //SECTION 2: MAP, FILTER AND REDUCE
 
 //MAP
@@ -588,6 +587,7 @@
 
 //Polyfill Array
 // Array.prototype.myMap = function (callback) {
+// map function retrun a new array
 // 	let array = [];
 // 	for (let i = 0; i < this.length; i++) {
 // 		array.push(callback(this[i], i, this));
@@ -632,16 +632,14 @@
 
 //Polyfill of reduce()
 // if (!Array.prototype.myFilter) {
-//     Array.prototype.myReduce = (callback, initialValue) => {
-//         let accumulator = initialValue === undefined ? this[0] : initialValue;
-//         for (let i = initialValue === undefined ? 1 : 0; i < this.length; i++) {
-//             accumulator = callback(accumulator, this[i], i, this);
-//         }
-//         return accumulator;
-//     };
+// 	Array.prototype.myReduce = (callback, initialValue) => {
+// 		let accumulator = initialValue === undefined ? this[0] : initialValue;
+// 		for (let i = initialValue === undefined ? 1 : 0; i < this.length; i++) {
+// 			accumulator = callback(accumulator, this[i], i, this);
+// 		}
+// 		return accumulator;
+// 	};
 // }
-
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: FIND THE LONGEST WORD LENGTH
 //const words = ["apple", "banana", "cherry", "dragonfruit", "elderberry"];
@@ -674,6 +672,8 @@
 // 	.filter((student) => student.score > 90)
 // 	.reduce((acc, current) => acc + current.score / 2, 0);
 // console.log(studentScore);
+
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //Question 5: Filter out books published before the year 2000 and return their titles
 // const books = [
@@ -711,6 +711,8 @@
 // }, 1);
 
 // console.log(largestFactorial); // Output: 40320 (8!)
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SECTION 3:STRING
 
