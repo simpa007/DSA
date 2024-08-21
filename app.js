@@ -527,7 +527,6 @@
 // 	return nums;
 // };
 // console.log(moveZeroes([0, 3, 0, 12, 0]));
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 2: MOVE ZEROS
 //>>>>>>>>>>>>>>>>>>>>>revisit<<<<<<<<<<<<<<<<<<<
@@ -673,8 +672,6 @@
 // 	.reduce((acc, current) => acc + current.score / 2, 0);
 // console.log(studentScore);
 
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
-
 //Question 5: Filter out books published before the year 2000 and return their titles
 // const books = [
 // 	{ title: "Book 1", year: 1998 },
@@ -682,6 +679,7 @@
 // 	{ title: "Book 3", year: 1995 },
 // 	{ title: "Book 4", year: 2001 },
 // ];
+
 // const bookFilter = books
 // 	.filter((book) => book.year > 2000)
 // 	.map((book) => book.title);
@@ -689,6 +687,7 @@
 
 //Question 6: Capitalize the first letter of each word in the array
 // const strings = ["hello world", "i am openai", "welcome to javascript"];
+
 // function capitalizeWords(arr) {
 // 	return arr.map((word) => {
 // 		const firstLetter = word.charAt(0).toUpperCase();
@@ -700,6 +699,7 @@
 // console.log(capitalizeWords(strings));
 
 //Question 7: Calculate the factorial of the largest number in the array
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // const numbers = [5, 2, 8, 4, 3];
 
 // const largestFactorial = numbers.reduce((largest, num) => {
@@ -711,8 +711,6 @@
 // }, 1);
 
 // console.log(largestFactorial); // Output: 40320 (8!)
-
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SECTION 3:STRING
 
@@ -740,6 +738,7 @@
 
 // console.log(strStr("sadbutsad", "sad"));
 //SOLUTION 2: Find the Index of the First Occurrence in a String
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // var strStr = function (haystack, needle) {
 // 	for (let i = 0; i <= haystack.length - needle.length; i++) {
 // 		let str = "";
@@ -752,7 +751,7 @@
 // 	}
 // 	return -1;
 // };
-// console.log(strStr("sadbutsad", "sad"));
+// console.log(strStr("sabutsad", "sad"));
 
 //SOLUTION 1: REVERSE A STRING
 // var reverseString = function (s) {
@@ -775,6 +774,8 @@
 // };
 
 // console.log(reverseString(["h", "e", "l", "l", "o"]));
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: VALID ANAGRAM
 //An Anagram is a word or phrase formed by rearranging the letters of a different
