@@ -775,7 +775,7 @@
 
 // console.log(reverseString(["h", "e", "l", "l", "o"]));
 
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: VALID ANAGRAM
 //An Anagram is a word or phrase formed by rearranging the letters of a different
@@ -786,12 +786,11 @@
 // 	t = t.split("").sort().join("");
 // 	return s === t;
 // };
-
 // console.log(isAnagram("anagram", "nagaram"));
 
 //SOLUTION 2: VALID ANAGRAM
 // var isAnagram = function (s, t) {
-// 	if (s.length === t.lenth) {
+// 	if (s.length !== t.length) {
 // 		return false;
 // 	}
 // 	let obj = {};
@@ -820,6 +819,7 @@
 // console.log(isAnagram("anagram", "nagaram"));
 
 //SOLUTION 1: LONGEST COMMON PREFIX
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // var longestCommonPrefix = function (strs) {
 // 	let prefix = strs[0];
 // 	for (let i = 1; i < strs.length; i++) {
@@ -845,6 +845,8 @@
 // };
 
 // console.log(mergeAlternately("abcd", "pq"));
+
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: LENGTH OF LAST WORD
 // var lengthOfLastWord = function (s) {
@@ -905,6 +907,8 @@
 // 	return len;
 // };
 // console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 2 : NOT CORRECT
 
