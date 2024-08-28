@@ -880,6 +880,8 @@
 
 //SOULTION 1: STRING COMPRESSION
 
+//>>>>>>>>>>>>>>>>>>>>>revisit<<<<<<<<<<<<<<<<<<<
+
 // let compress = function (chars) {
 // 	let i = 0,
 // 		len = 0;
@@ -904,8 +906,6 @@
 // };
 // console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
 
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
-
 //SOLUTION 2 : NOT CORRECT
 
 // var compress = function (chars) {
@@ -922,7 +922,7 @@
 // 	for (let i = 0; i < value.length; i++) {
 // 		array.push(value[i].toString());
 // 	}
-// 	return array;
+// 	return array.length;
 // };
 // console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
 
@@ -945,7 +945,7 @@
 // };
 // console.log(reverseWords(" the sky is  blue "));
 
-//continue from here
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: REVERSE VOWELS OF A STRING
 // let reverseVowels = function (s) {
@@ -1035,6 +1035,8 @@
 // 	return lastElement + sumOfArray(arr);
 // }
 // console.log(sumOfArray([2, 3, 4, 5]));
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: FIBONACCI SEQUENCES
 //fib(7) : [0,1,1,2,3,5,8,13]
