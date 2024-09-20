@@ -971,12 +971,12 @@
 // console.log(reverseVowels("hello"));
 // console.log(reverseVowels("leetcode"));
 
-//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 //SOLUTION 1 : ROTATE STRING
-
+//>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<
 //SECTION4: RECURSION
 
 // function fun(n) {
+// 	//base condition
 // 	if (n === 0) {
 // 		return;
 // 	}
@@ -990,8 +990,8 @@
 
 // function factorial(n) {
 // 	let sum = 1;
-// 	for (let i = 2; i <= n; i++) {
-// 		sum = sum * i;
+// 	for (let i = n; i > 0; i--) {
+// 		sum *= i;
 // 	}
 // 	return sum;
 // }
@@ -1003,7 +1003,8 @@
 // 	if (n === 0) {
 // 		return 1;
 // 	}
-// 	return n * factorial(n - 1);
+// 	let val = n * factorial(n - 1);
+// 	return val;
 // }
 // console.log(factorial(5));
 
@@ -1017,15 +1018,28 @@
 // }
 // console.log(sumOfArray([2, 3, 4, 5]));
 
-//SOLUTION 2: SUM OF ARRAY
-
-// function sumOfArray(arr) {
-// 	if (arr.length === 0) {
+//Sum of Array
+// function sumOfArrays(arr, n) {
+// 	if (n === 0) {
 // 		return 0;
 // 	}
-// 	return arr[arr.length - 1] + sumOfArray(arr.slice(0, arr.length - 1));
+
+// 	return arr[n - 1] + sumOfArrays(arr, n - 1);
 // }
-// console.log(sumOfArray([2, 3, 4, 5]));
+
+// console.log(sumOfArrays([1, 2, 3, 4, 5], 5));
+
+//SOLUTION 2: SUM OF ARRAY
+
+function sumOfArray(arr) {
+	if (arr.length === 0) {
+		return 0;
+	}
+	let val = arr[arr.length - 1] + sumOfArray(arr.slice(0, arr.length - 1));
+
+	return val;
+}
+console.log(sumOfArray([2, 3, 4, 5]));
 
 //SOLUTION 3: SUM OF ARRAY
 
@@ -1038,7 +1052,7 @@
 // }
 // console.log(sumOfArray([2, 3, 4, 5]));
 
-//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
+//>>>>>>>>>>>>>>>>>>>>>START<<<<<<<<<<<<<<<<<<<
 
 //SOLUTION 1: FIBONACCI SEQUENCES
 //fib(7) : [0,1,1,2,3,5,8,13]
@@ -1106,6 +1120,8 @@
 // };
 // let value = BinarySearchRecur([1, 4, 6, 9, 12, 15], 6);
 // console.log(value);
+
+//>>>>>>>>>>>>>>>>>>>>>STOP<<<<<<<<<<<<<<<<<<<
 
 //SDLUTION 1: Sqrt(x)
 // let sqrt = function (x) {
