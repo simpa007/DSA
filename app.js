@@ -1030,16 +1030,16 @@
 // console.log(sumOfArrays([1, 2, 3, 4, 5], 5));
 
 //SOLUTION 2: SUM OF ARRAY
+//>>>>>>>>>>>>>>>>>>>>>>>>>Revisit<<<<<<<<<<<<<<<<<<<<<
+// function sumOfArray(arr) {
+// 	if (arr.length === 0) {
+// 		return 0;
+// 	}
+// 	let val = arr[arr.length - 1] + sumOfArray(arr.slice(0, arr.length - 1));
 
-function sumOfArray(arr) {
-	if (arr.length === 0) {
-		return 0;
-	}
-	let val = arr[arr.length - 1] + sumOfArray(arr.slice(0, arr.length - 1));
-
-	return val;
-}
-console.log(sumOfArray([2, 3, 4, 5]));
+// 	return val;
+// }
+// console.log(sumOfArray([2, 3, 4, 5]));
 
 //SOLUTION 3: SUM OF ARRAY
 
@@ -1068,7 +1068,7 @@ console.log(sumOfArray([2, 3, 4, 5]));
 //SECTION 5 : SEARCHING IN JAVASCRIPT
 
 //Linear Search in Javascript
-// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // let linearSearch = function (arr, target) {
 // 	for (let i = 0; i < arr.length; i++) {    // O(N)
@@ -1081,24 +1081,26 @@ console.log(sumOfArray([2, 3, 4, 5]));
 // console.log(linearSearch(arr, 20));
 
 //Binary Search in Javascript;
-// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//only works on Sorted arrays.
 
-// let binarySearch = function (arr, target) {
-// 	let start = 0;
-// 	let end = arr.length - 1;
-// 	while (start <= end) {
-// 		let mid = Math.floor((start + end) / 2);
-// 		if (arr[mid] === target) {
-// 			return mid;
-// 		} else if (arr[mid] > target) {
-// 			end = mid - 1;
-// 		} else {
-// 			start = mid + 1;
-// 		}
-// 	}
-// 	return -1;
-// };
-// console.log(binarySearch(array, 3));
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let binarySearch = function (arr, target) {
+	let start = 0;
+	let end = arr.length - 1;
+	while (start <= end) {
+		let mid = Math.floor((start + end) / 2);
+		if (arr[mid] === target) {
+			return mid;
+		} else if (arr[mid] > target) {
+			end = mid - 1;
+		} else {
+			start = mid + 1;
+		}
+	}
+	return -1;
+};
+console.log(binarySearch(array, 3));
 
 // Binary Search using Recursion
 
